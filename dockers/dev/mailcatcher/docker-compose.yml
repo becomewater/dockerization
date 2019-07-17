@@ -1,0 +1,12 @@
+version: '2'
+services:
+  mailcatcher:
+    build: .
+    networks:
+      default:
+        ipv4_address: 172.16.22.103
+
+networks:
+  default:
+    external:
+      name: becomewater_net

@@ -1,0 +1,5 @@
+*/DEV_REPO
+*/docker-compose.yml
+!mailcatcher/docker-compose.yml
+*/docker/tmp
+*/docker/.settings

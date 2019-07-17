@@ -1,0 +1,7 @@
+env=dev
+resetdata=0
+mockdata=0
+MAIL_HOST=mailcatcher.dock
+MAIL_PORT=1025
+MAIL_USERNAME=
+MAIL_PASSWORD=

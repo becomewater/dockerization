@@ -1,0 +1,12 @@
+
+#
+# START: becomewater/dockerization dev projects hosts
+#
+
+172.16.22.101 becomewater.dock www.becomewater.dock
+172.16.22.102 www-db.becomewater.dock
+172.16.22.103 mailcatcher.dock
+
+#
+# END: becomewater/dockerization dev projects hosts
+#
