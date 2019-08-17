@@ -1,10 +1,12 @@
 #!/bin/bash
-# description     : dockerization console for development setup of adshares.net components
+# description     : dockerization console for development setup of multi component system
 # author		      : github.com/yodahack
 # version         : 0.2-dev-clean
 # requirements    : Docker version 1.13.1, build 092cba3
 # requirements    : docker-compose version 1.8.0
 # notes           : developped & tested with Bash 4.3.48(1)-release on Bodhi Linux 16.04
+# extra notes     : written originally for adshares.net <3
+# rights          : seriously it is just a bash script - use it fix it let me know if can improve it <3
 
 set -e                            # REQUIRED // Exit this process immediately if a sub command returns with a non-zero status
 export COMPOSE_IGNORE_ORPHANS=1   # OPTIONAL // Works with docker-compose v1.21.2+
@@ -81,7 +83,7 @@ function console_docker_tools_install_help {
     echo
     echo " Requirements:"
     echo
-    echo "  * https://github.com/adshares/dockerization"
+    echo "  * https://github.com/becomewater/dockerization"
     echo
     echo " In case of manual installation, please follow docker docs:"
     echo
@@ -91,7 +93,7 @@ function console_docker_tools_install_help {
     echo
     echo " Good luck"
     echo " <3, Team"
-    echo " adshares.net"
+    echo " becomewater.com"
     echo
 }
 
@@ -334,32 +336,32 @@ function console_help_examples {
 
    # Setup, build, up dev project
 
-    ${cb}\$${cn} ./console.sh link dev/landing-page /home/cptJTKirk/adshares/landing-page
-    ${cb}\$${cn} ./console.sh b landing-page
-    ${cb}\$${cn} ./console.sh u landing-page
+    ${cb}\$${cn} ./console.sh link dev/becomewater-website /home/cptJTKirk/becomewater/becomewater-website
+    ${cb}\$${cn} ./console.sh b becomewater-website
+    ${cb}\$${cn} ./console.sh u becomewater-website
 
     // in last 2 cases dev/ project group is ommited as it is first on the list and will be checked and if projected found selected automatically (with warning)
 
-    // if you have setup your hostnames you can now test it with browser by opening ${cp}http://www.adshares.ads${cn}
+    // if you have setup your hostnames you can now test it with browser by opening ${cp}http://www.becomewater.dock${cn}
 
    # Build project with custom build setting
 
-    ${cb}\$${cn} ./console.sh -s resetdata=1 b adserver
+    ${cb}\$${cn} ./console.sh -s resetdata=1 b becomewater-website
 
     // you can provide multiple custom settings separated by comma
 
    # Batch commands usage:
 
-    ${cb}\$${cn} ./console.sh u adpanel,adserver,....
+    ${cb}\$${cn} ./console.sh u becomewater-website,mailcatcher,....
 
-    // runs up command on automatically selected dev/adpanel, dev/adserver, dev/...
+    // runs up command on automatically selected dev/becomewater-website, dev/mailcatcher, dev/...
     // requires dev projects to be linked first with local git repositories
-
-    ${cb}\$${cn} ./console.sh d,b,u test/adpanel,adserver,...
-
-    // runs down, build and up commands on test/adpanel, test/adserver and test/.... using first hinted projects group test/ as default
-
     "
+#    ${cb}\$${cn} ./console.sh d,b,u test/becomewater-website,mailcatcher,...
+#
+#    // runs down, build and up commands on test/becomewater-website, test/mailcatcher and test/.... using first hinted projects group test/ as default
+#
+#    "
   )
 }
 
@@ -686,7 +688,7 @@ function console_docker_project_var_set {
   fi
 
   # fallback
-  readonly DOCKER_CONSOLE_DOCKER_PROJECT="adshares-$1"
+  readonly DOCKER_CONSOLE_DOCKER_PROJECT="becomewater-$1"
 }
 
 # BUILD
